@@ -404,7 +404,7 @@ h1{
 
 }
 
-@media (max-width: 330px){
+@media (max-width: 380px){
     .page5, .img1, .img2{
         display: none;
     }
@@ -412,6 +412,10 @@ h1{
     .frame{
         padding: 1px 1%;
     }
+    .email button{
+        margin-top: 2rem;
+    }
+    
 }
 
 /*  Медиа запрос для адаптации */
