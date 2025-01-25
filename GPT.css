@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center;    /* Центрируем по горизонтали */
+    min-height: 100vh;      /* Занимаем весь видимый экран */
+    margin: 0;
+    text-align: center;
+}
+
+/* Устанавливаем max-width для gif */
+.tenor-gif-embed{
+    max-width: 400px;
+}
+
+H1 {
+    max-width: 60%; /* Максимальная ширина текста */
+    margin-top: 20px;
+    font-size: 1.9rem;
+}
+/*  медиа запрос для телефонов */
+@media(max-width: 768px){
+   .tenor-gif-embed{
+      max-width: 90%;
+   }
+   H1{
+      font-size: 1rem;
+   }
+}
