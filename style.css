@@ -404,7 +404,7 @@ h1{
 
 }
 
-@media (max-width: 360px){
+@media (max-width: 390px){
     .page5, .img1, .img2{
         display: none;
     }
