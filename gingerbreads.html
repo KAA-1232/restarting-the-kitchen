@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница пряников</title>
+    <link rel="stylesheet" href="Cakes.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Наши товары</h1>
+
+        <div class="products">
+            <div class="product" onclick="showContactInfo('product1')">
+                <img src="Genadei\delicious-cookies-arrangement (1).png" alt="Товар 1">
+                <h3>Товар 1</h3>
+                <p>Описание товара 1...</p>
+            </div>
+
+            <div class="product" onclick="showContactInfo('product2')">
+                <img src="Genadei\delicious-food-prepared-jewish-hanukkah-celebration (1).png" alt="Товар 2">
+                <h3>Товар 2</h3>
+                <p>Описание товара 2...</p>
+            </div>
+
+            <div class="product" onclick="showContactInfo('product3')">
+                <img src="Genadei\star-shaped-biscuits-with-pine-cone.png" alt="Товар 3">
+                <h3>Товар 3</h3>
+                <p>Описание товара 3...</p>
+            </div>
+            <!-- Добавьте больше товаров -->
+        </div>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeContactInfo()">&times;</span>
+                <h2>Контактная информация</h2>
+                <div id="contactDetails">
+                    <!-- Информация о контактах будет здесь -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const contactData = {
+            product1: {
+                phone1: "+7 (900) 123-45-67",
+                phone2: "+7 (901) 876-54-32",
+                phone3: "+7 (902) 246-80-13",
+                email1: "info1@example.com",
+                email2: "sales@example.com",
+                email3: "support@example.com"
+            },
+            product2: {
+                phone1: "+7 (911) 111-11-11",
+                phone2: "+7 (922) 222-22-22",
+                phone3: "+7 (933) 333-33-33",
+                email1: "info2@example.com",
+                email2: "sales2@example.com",
+                email3: "support2@example.com"
+            },
+            product3: {
+                phone1: "+7 (944) 444-44-44",
+                phone2: "+7 (955) 555-55-55",
+                phone3: "+7 (966) 666-66-66",
+                email1: "info3@example.com",
+                email2: "sales3@example.com",
+                email3: "support3@example.com"
+            }
+            // Добавьте информацию о контактах для каждого товара
+        };
+
+        function showContactInfo(productId) {
+            const contactInfo = contactData[productId];
+            if (contactInfo) {
+                const contactDetailsDiv = document.getElementById("contactDetails");
+                contactDetailsDiv.innerHTML = `
+                    <p>Телефон 1: ${contactInfo.phone1}</p>
+                    <p>Телефон 2: ${contactInfo.phone2}</p>
+                    <p>Телефон 3: ${contactInfo.phone3}</p>
+                    <p>Email 1: ${contactInfo.email1}</p>
+                    <p>Email 2: ${contactInfo.email2}</p>
+                    <p>Email 3: ${contactInfo.email3}</p>
+                `;
+                document.getElementById("contactModal").style.display = "block";
+            } else {
+                console.error(`Информация о контактах для товара "${productId}" не найдена.`);
+            }
+        }
+
+        function closeContactInfo() {
+            document.getElementById("contactModal").style.display = "none";
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            let modal = document.getElementById("contactModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
